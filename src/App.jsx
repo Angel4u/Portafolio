@@ -394,7 +394,7 @@ export default function App() {
             </div>
             <h2 className="p-section-title">QUE INCLUYE MI TRABAJO WEB</h2>
             <p className="p-section-desc">
-              Soluciones enfocadas solucionar de manera agil los problemas que presenta el usuario.
+              Soluciones enfocadas en solucionar de manera agil los problemas que presenta el usuario.
             </p>
           </div>
 
