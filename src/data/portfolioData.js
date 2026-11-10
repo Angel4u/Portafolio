@@ -9,15 +9,15 @@ export const personalInfo = {
   codename: "EASTMAN",
   arcana: "EL CREADOR // ARCANO I",
   level: "NV. 99",
-  role: "Desarrollador Web & Frontend Creator",
+  role: "Estudiante de Ingenieria civil Informatica",
   location: "CHILE",
   available: true,
   availabilityText: "DISPONIBLE PARA NUEVOS PROYECTOS",
-  heroHeadline: "DISEÑO Y DESARROLLO PAGINAS WEB QUE ROBAN LA ATENCION",
+  heroHeadline: "DISEÑO Y DESARROLLO PAGINAS WEB",
   heroSubheadline:
-    "Construyo sitios web modernos, aplicaciones interactivas en React y plataformas digitales con identidad visual fuerte, alto rendimiento y contacto directo.",
+    "Soy un estudiante en tercer año de Ingenieria civil Informatica, me encanta la ciberseguridad y el desarrollo de aplicaciones web.",
   aboutText:
-    "Desarrollador web enfocado en crear interfaces con personalidad propia, navegación fluida y código limpio. Desde plataformas interactivas de estudio hasta sitios comerciales de alta conversión, cada proyecto está diseñado para destacar y funcionar a la perfección en celulares y escritorio.",
+    "Diseño aplicaciones web, Ciberseguridad, IA",
   contact: {
     whatsappNumber: "56934014520",
     whatsappDisplay: "+56 9 3401 4520",
@@ -40,97 +40,43 @@ export const projects = [
     category: "Aplicacion Web",
     arcanaTag: "CONOCIMIENTO",
     year: "2026",
-    url: "https://angelitostudy.com", // Reemplaza con el link desplegado de AngelitoStudy
+    url: "https://angelito-study-jfpnlufaq-educaresponde.vercel.app/", // Reemplaza con el link desplegado de AngelitoStudy
     description:
-      "Plataforma interactiva de estudio y organizacion academica ambientada con estetica de Persona. Incluye interfaz gamificada, seguimiento de progreso y herramientas de concentracion.",
+      "Plataforma interactiva de estudio y organizacion academica para estudiantes de ingenieria.",
     challengeAndSolution:
-      "Transformar la rutina de estudio en una experiencia visualmente estimulante y dinamica mediante menus estilizados, alto contraste y navegacion instantanea.",
+      "Ayudar a estudiantes de ingenieria a acceder a resolucion de ejercicios tipo prueba para complementar su estudio.",
     features: [
       "Interfaz inspirada en el sistema de menus de Persona",
-      "Organizacion de sesiones de estudio y seguimiento de objetivos",
+      "Organizacion de material de estudio por asignatura",
       "Diseño adaptable a dispositivos moviles y escritorio",
       "Transiciones rapidas sin recargas de pagina en React",
     ],
-    technologies: ["React", "JavaScript ES6+", "CSS Avanzado", "Diseño UI/UX"],
+    technologies: ["React", "JavaScript ES6+", "CSS Avanzado", "Diseño UI/UX", "SupaBase"],
     metrics: {
-      speed: "99 / 100",
-      responsive: "ADAPTABLE",
       status: "OPERATIVO",
     },
   },
   {
     id: "mision-02",
     code: "ARCHIVO #02",
-    title: "Landing Page Comercial de Alta Conversion",
-    category: "Landing Page",
-    arcanaTag: "IMPACTO",
+    title: "EducaResponde",
+    category: "Software educativo",
+    arcanaTag: "Capacitaciones",
     year: "2026",
-    url: "https://ejemplo-landing.com", // Reemplaza con el link real de tu pagina
+    url: "https://Nodisponibletodavia.com", // Reemplaza con el link real de tu pagina
     description:
-      "Sitio web promocional diseñado para captar clientes potenciales, presentar servicios de forma directa y canalizar consultas inmediatamente hacia WhatsApp.",
+      "Pagina web + plataforma tipo SIGA para establecimiento dedicado a capacitaciones a profesores",
     challengeAndSolution:
-      "Captar la atencion del visitante en los primeros segundos con una estructura clara de beneficios, pruebas de calidad y llamado a la accion directo.",
+      "Crear un sistema que permita a la empresa entregar capacitaciones online a sus clientes",
     features: [
       "Diseño 100% adaptable a telefonos moviles y computadores",
       "Conexion directa con WhatsApp para cotizaciones instantaneas",
-      "Optimizacion de velocidad de carga y posicionamiento web (SEO)",
+      "Carrito de compra)",
       "Secciones claras de servicios, preguntas frecuentes y contacto",
     ],
-    technologies: ["React", "HTML5", "CSS3", "Integracion WhatsApp"],
+    technologies: ["React", "HTML5", "CSS3", "SQL"],
     metrics: {
-      speed: "100 / 100",
-      responsive: "MOBILE FIRST",
-      status: "OPERATIVO",
-    },
-  },
-  {
-    id: "mision-03",
-    code: "ARCHIVO #03",
-    title: "Catalogo Digital & E-Commerce Interactivo",
-    category: "E-Commerce",
-    arcanaTag: "FORTUNA",
-    year: "2026",
-    url: "https://ejemplo-catalogo.com", // Reemplaza con el link real de tu pagina
-    description:
-      "Vitrina digital con catalogo de productos filtrable por categorias, buscador en tiempo real, armado de carrito y envio de pedido estructurado por WhatsApp.",
-    challengeAndSolution:
-      "Permitir que los clientes revisen productos desde su celular, seleccionen cantidades y envien su pedido listo en un solo paso.",
-    features: [
-      "Filtros instantaneos por categoria y barra de busqueda",
-      "Carrito de compras interactivo con calculo automatico",
-      "Generacion automatica del resumen de compra para WhatsApp",
-      "Panel visual limpio y rapido de recorrer",
-    ],
-    technologies: ["React", "JavaScript", "Estado Dinamico", "Responsive"],
-    metrics: {
-      speed: "98 / 100",
-      responsive: "ADAPTABLE",
-      status: "OPERATIVO",
-    },
-  },
-  {
-    id: "mision-04",
-    code: "ARCHIVO #04",
-    title: "Portal Web Corporativo & Servicios",
-    category: "Web Corporativa",
-    arcanaTag: "EMPERADOR",
-    year: "2026",
-    url: "https://ejemplo-corporativo.com", // Reemplaza con el link real de tu pagina
-    description:
-      "Sitio institucional profesional para empresas y especialistas que necesitan respaldar su marca, presentar su equipo y recibir solicitudes por correo o telefono.",
-    challengeAndSolution:
-      "Consolidar la presencia digital de la empresa con una navegacion ordenada, formularios de contacto directos y excelente presentacion visual.",
-    features: [
-      "Arquitectura multipagina clara y facil de navegar",
-      "Canales directos de atencion por correo, LinkedIn y WhatsApp",
-      "Estructura semantica preparada para buscadores (Google)",
-      "Rendimiento optimizado y carga inmediata",
-    ],
-    technologies: ["React", "HTML5 Semantico", "CSS Moderno", "SEO"],
-    metrics: {
-      speed: "99 / 100",
-      responsive: "MULTIPLATAFORMA",
-      status: "OPERATIVO",
+      status: "En progreso",
     },
   },
 ];
@@ -155,23 +101,10 @@ export const services = [
   },
   {
     code: "MODULO 03",
-    title: "SITIOS CORPORATIVOS Y PORTAFOLIOS",
+    title: "PORTAFOLIOS",
     description:
       "Presencia profesional en internet adaptable a celulares, tablets y computadores, con identidad visual memorable y estructura optimizada.",
     highlights: ["100% RESPONSIVE", "IDENTIDAD PROPIA", "SEO BASICO"],
   },
 ];
 
-// ============================================================================
-// HABILIDADES Y ESTADISTICAS (ESTILO PARAMETROS DE PERSONA)
-// ============================================================================
-export const skills = [
-  { name: "REACT.JS & COMPONENTES", category: "FRONTEND", level: 95, rank: "RANGO MAX" },
-  { name: "JAVASCRIPT (ES6+)", category: "LOGICA", level: 92, rank: "RANGO 9" },
-  { name: "DISEÑO UI & CSS AVANZADO", category: "ESTETICA", level: 96, rank: "RANGO MAX" },
-  { name: "HTML5 & ESTRUCTURA WEB", category: "BASE", level: 98, rank: "RANGO MAX" },
-  { name: "RESPONSIVE & MOBILE FIRST", category: "ADAPTABILIDAD", level: 95, rank: "RANGO MAX" },
-  { name: "INTEGRACION WHATSAPP / CORREO", category: "CONEXION", level: 94, rank: "RANGO 9" },
-  { name: "GIT, GITHUB & DESPLIEGUE", category: "HERRAMIENTAS", level: 90, rank: "RANGO 8" },
-  { name: "OPTIMIZACION DE RENDIMIENTO", category: "VELOCIDAD", level: 93, rank: "RANGO 9" },
-];

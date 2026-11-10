@@ -100,16 +100,16 @@ export default function App() {
 
           <nav className="p-nav-links">
             <a href="#proyectos" className="p-nav-item">
-              MISIONES / WEBS
+              WEBS
             </a>
             <a href="#servicios" className="p-nav-item">
               SERVICIOS
             </a>
             <a href="#parametros" className="p-nav-item">
-              PARAMETROS
+              ENFOQUE
             </a>
             <a href="#contacto" className="p-nav-item">
-              CONFIDENTES
+              CONTACTO
             </a>
           </nav>
 
@@ -194,15 +194,6 @@ export default function App() {
                 <MessageSquare size={18} />
                 <span>HABLAR AL WHATSAPP</span>
               </a>
-
-              <button
-                type="button"
-                onClick={() => setShowGuideModal(true)}
-                className="p-btn p-btn-dark"
-              >
-                <HelpCircle size={18} />
-                <span>COMO FUNCIONA EL PORTAFOLIO</span>
-              </button>
             </div>
           </div>
 
@@ -287,8 +278,8 @@ export default function App() {
             </div>
             <h2 className="p-section-title">MIS PAGINAS WEB Y DESARROLLOS</h2>
             <p className="p-section-desc">
-              Cada expediente muestra el enlace directo a la pagina web, su proposito, las
-              funciones implementadas y el stack tecnologico utilizado.
+              Cada expediente muestra el enlace directo a la pagina web, su proposito y las
+              funciones implementadas.
             </p>
           </div>
 
@@ -403,8 +394,7 @@ export default function App() {
             </div>
             <h2 className="p-section-title">QUE INCLUYE MI TRABAJO WEB</h2>
             <p className="p-section-desc">
-              Soluciones enfocadas en velocidad, impacto visual y facilidad de uso tanto para el
-              administrador como para el visitante.
+              Soluciones enfocadas solucionar de manera agil los problemas que presenta el usuario.
             </p>
           </div>
 
@@ -443,12 +433,6 @@ export default function App() {
             <p style={{ color: '#e4e4e7', marginBottom: '1.1rem', fontSize: '0.96rem' }}>
               {personalInfo.aboutText}
             </p>
-            <p style={{ color: '#a1a1aa', marginBottom: '1.5rem', fontSize: '0.92rem' }}>
-              Para agregar o actualizar cualquiera de las paginas web mostradas en este portafolio,
-              solo necesitas editar el archivo <code>src/data/portfolioData.js</code> con el link y
-              descripcion de cada proyecto.
-            </p>
-
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.85rem' }}>
               <a
                 href={personalInfo.contact.linkedin}
@@ -471,30 +455,6 @@ export default function App() {
               </a>
             </div>
           </div>
-
-          <div className="p-panel-box">
-            <div className="p-banner-strip">
-              <Code2 size={16} />
-              <span>PARAMETROS TECNICOS // STACK</span>
-            </div>
-            <h3 className="p-section-title" style={{ fontSize: '1.85rem' }}>
-              HABILIDADES Y TECNOLOGIAS
-            </h3>
-
-            <div className="p-skill-bars">
-              {skills.map((skill) => (
-                <div key={skill.name} className="p-skill-row">
-                  <div className="p-skill-top">
-                    <span>{skill.name}</span>
-                    <span className="p-skill-rank">{skill.rank}</span>
-                  </div>
-                  <div className="p-skill-track">
-                    <div className="p-skill-fill" style={{ width: `${skill.level}%` }} />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
@@ -504,7 +464,7 @@ export default function App() {
           <div className="p-section-header">
             <div className="p-banner-strip">
               <Zap size={16} />
-              <span>RED DE CONFIDENTES // CONTACTO DIRECTO</span>
+              <span>CONTACTO DIRECTO</span>
             </div>
             <h2 className="p-section-title">CONTACTAME AHORA</h2>
             <p className="p-section-desc">
@@ -628,93 +588,6 @@ export default function App() {
                 </div>
               </div>
             </div>
-
-            {/* Formulario Estilo Carta de Aviso (Calling Card) */}
-            <div className="p-calling-card-form">
-              <div className="p-banner-strip" style={{ marginBottom: '0.8rem' }}>
-                <Send size={15} />
-                <span>CARTA DE AVISO // MENSAJE DIRECTO</span>
-              </div>
-              <h3
-                style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: '1.85rem',
-                  marginBottom: '0.45rem',
-                }}
-              >
-                REDACTAR SOLICITUD DE PROYECTO
-              </h3>
-              <p style={{ color: '#e4e4e7', fontSize: '0.9rem', marginBottom: '1.35rem' }}>
-                Completa los campos y elige si deseas enviarme el mensaje directo a mi WhatsApp o a
-                mi Correo Electronico:
-              </p>
-
-              <form onSubmit={handleSendViaWhatsApp}>
-                <div className="p-form-group">
-                  <label htmlFor="visitorName">TU NOMBRE O EMPRESA</label>
-                  <input
-                    id="visitorName"
-                    type="text"
-                    className="p-input"
-                    placeholder="Ej: Nombre / Marca"
-                    value={visitorName}
-                    onChange={(e) => setVisitorName(e.target.value)}
-                  />
-                </div>
-
-                <div className="p-form-group">
-                  <label htmlFor="projectType">TIPO DE MISION / PROYECTO</label>
-                  <select
-                    id="projectType"
-                    className="p-select"
-                    value={projectType}
-                    onChange={(e) => setProjectType(e.target.value)}
-                  >
-                    <option value="Landing Page / Sitio Comercial">
-                      Landing Page / Sitio Comercial
-                    </option>
-                    <option value="Aplicacion Web en React">
-                      Aplicacion Web Interactiva en React
-                    </option>
-                    <option value="Catalogo Digital / E-Commerce">
-                      Catalogo Digital / Tienda Online
-                    </option>
-                    <option value="Oportunidad Laboral / Colaboracion">
-                      Oportunidad Laboral / Reclutamiento
-                    </option>
-                    <option value="Consulta General">Consulta General</option>
-                  </select>
-                </div>
-
-                <div className="p-form-group">
-                  <label htmlFor="visitorMessage">DETALLES DEL MENSAJE</label>
-                  <textarea
-                    id="visitorMessage"
-                    rows={4}
-                    className="p-textarea"
-                    placeholder="Escribe aqui de que trata tu proyecto o consulta..."
-                    value={visitorMessage}
-                    onChange={(e) => setVisitorMessage(e.target.value)}
-                  />
-                </div>
-
-                <div className="p-form-actions">
-                  <button type="submit" className="p-btn p-btn-primary">
-                    <MessageSquare size={17} />
-                    <span>ENVIAR POR WHATSAPP</span>
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={handleSendViaEmail}
-                    className="p-btn p-btn-white"
-                  >
-                    <Mail size={17} />
-                    <span>ENVIAR POR CORREO</span>
-                  </button>
-                </div>
-              </form>
-            </div>
           </div>
         </div>
       </section>
@@ -723,7 +596,7 @@ export default function App() {
       <footer className="p-footer">
         <div className="container p-footer-inner">
           <div>
-            <strong>{personalInfo.name}</strong> // PORTAFOLIO DE DESARROLLO WEB
+            <strong>{personalInfo.name}</strong> // PORTAFOLIO
           </div>
           <div style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap' }}>
             <a
@@ -927,92 +800,6 @@ export default function App() {
               aria-label="Cerrar"
             >
               <X size={20} />
-            </button>
-
-            <div className="p-banner-strip" style={{ marginBottom: '0.6rem' }}>
-              <span>MANUAL DE OPERACION // PORTAFOLIO</span>
-            </div>
-
-            <h2
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: '2rem',
-                marginBottom: '0.85rem',
-              }}
-            >
-              COMO FUNCIONA TU PORTAFOLIO WEB
-            </h2>
-
-            <p style={{ color: '#e4e4e7', fontSize: '0.94rem', marginBottom: '1rem' }}>
-              Cada tarjeta en la seccion de proyectos funciona como un expediente completo para que
-              tus visitantes o clientes vean no solo el enlace, sino el valor real de tu trabajo:
-            </p>
-
-            <ul className="p-feature-list" style={{ marginBottom: '1.25rem' }}>
-              <li>
-                <CheckSquare
-                  size={16}
-                  style={{ flexShrink: 0, marginTop: 2, color: 'var(--p-accent-bright)' }}
-                />
-                <span>
-                  <strong>1. ENLACE EN VIVO:</strong> El visitante puede hacer clic en la barra de
-                  direccion o en el boton <em>VISITAR WEB</em> para abrir tu pagina desplegada.
-                </span>
-              </li>
-              <li>
-                <CheckSquare
-                  size={16}
-                  style={{ flexShrink: 0, marginTop: 2, color: 'var(--p-accent-bright)' }}
-                />
-                <span>
-                  <strong>2. CONTEXTO Y PROPOSITO:</strong> Explica que tipo de sitio es (Aplicacion
-                  Web como <em>AngelitoStudy</em>, Landing Page, Tienda Online o Web Corporativa) y
-                  que necesidad resuelve.
-                </span>
-              </li>
-              <li>
-                <CheckSquare
-                  size={16}
-                  style={{ flexShrink: 0, marginTop: 2, color: 'var(--p-accent-bright)' }}
-                />
-                <span>
-                  <strong>3. CARACTERISTICAS Y TECNOLOGIAS:</strong> Lista lo que construiste (ej.
-                  React, diseño adaptable a celulares, conexion con WhatsApp).
-                </span>
-              </li>
-              <li>
-                <CheckSquare
-                  size={16}
-                  style={{ flexShrink: 0, marginTop: 2, color: 'var(--p-accent-bright)' }}
-                />
-                <span>
-                  <strong>4. CONTACTO INMEDIATO:</strong> Conecta cada proyecto directamente con tu
-                  WhatsApp (<strong>+56 9 3401 4520</strong>), tu LinkedIn y tu correo (
-                  <strong>alexandereag2@gmail.com</strong>).
-                </span>
-              </li>
-            </ul>
-
-            <div
-              style={{
-                background: 'var(--p-black)',
-                border: '2px solid var(--p-white)',
-                padding: '1rem',
-                fontSize: '0.88rem',
-                marginBottom: '1.25rem',
-              }}
-            >
-              <strong>COMO EDITAR TUS LINKS:</strong> Abre el archivo{' '}
-              <code>src/data/portfolioData.js</code> y modifica el campo <code>url</code>,{' '}
-              <code>title</code> y <code>description</code> de cada proyecto.
-            </div>
-
-            <button
-              type="button"
-              onClick={() => setShowGuideModal(false)}
-              className="p-btn p-btn-primary"
-            >
-              <span>ENTENDIDO</span>
             </button>
           </div>
         </div>
