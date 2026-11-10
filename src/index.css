@@ -1,0 +1,1095 @@
+:root {
+  --p-bg: #08080a;
+  --p-bg-panel: #111116;
+  --p-accent: #e50914;
+  --p-accent-bright: #ff1e27;
+  --p-accent-dark: #990008;
+  --p-secondary: #facc15;
+  --p-white: #ffffff;
+  --p-offwhite: #e4e4e7;
+  --p-muted: #a1a1aa;
+  --p-black: #000000;
+  --p-halftone: rgba(229, 9, 20, 0.14);
+  --p-stripe: rgba(229, 9, 20, 0.08);
+  --font-display: 'Anton', 'Bebas Neue', Impact, sans-serif;
+  --font-hud: 'Chakra Petch', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* Modo Alternativo: Persona 3 Reload (Dark Hour Cyan) */
+[data-persona-theme="p3r"] {
+  --p-bg: #040914;
+  --p-bg-panel: #0a1428;
+  --p-accent: #00d2ff;
+  --p-accent-bright: #38e8ff;
+  --p-accent-dark: #0051a8;
+  --p-secondary: #38bdf8;
+  --p-halftone: rgba(0, 210, 255, 0.13);
+  --p-stripe: rgba(0, 210, 255, 0.07);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--p-bg);
+  color: var(--p-white);
+  line-height: 1.55;
+  overflow-x: hidden;
+  background-image:
+    radial-gradient(var(--p-halftone) 1.5px, transparent 1.5px),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 18px,
+      var(--p-stripe) 18px,
+      var(--p-stripe) 36px
+    );
+  background-size: 20px 20px, 100% 100%;
+  background-attachment: fixed;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ============================================================================
+   HUD NAVIGATION BAR (ESTILO MENU DE COMANDO PERSONA)
+   ============================================================================ */
+.p-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(8, 8, 10, 0.94);
+  border-bottom: 4px solid var(--p-accent);
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.85);
+}
+
+.p-navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 78px;
+  gap: 1rem;
+}
+
+.p-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  transform: skewX(-8deg);
+}
+
+.p-brand-box {
+  background: var(--p-accent);
+  color: var(--p-white);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.7rem;
+  border: 3px solid var(--p-white);
+  box-shadow: 4px 4px 0 var(--p-black);
+}
+
+.p-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.p-brand-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  letter-spacing: 0.05em;
+  color: var(--p-white);
+  line-height: 1;
+}
+
+.p-brand-sub {
+  font-family: var(--font-hud);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--p-accent-bright);
+  letter-spacing: 0.14em;
+}
+
+.p-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.p-nav-item {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.9rem;
+  background: var(--p-black);
+  color: var(--p-white);
+  border: 2px solid var(--p-white);
+  transform: skewX(-10deg);
+  transition: all 0.16s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 3px 3px 0 var(--p-accent);
+}
+
+.p-nav-item:hover {
+  background: var(--p-white);
+  color: var(--p-black);
+  border-color: var(--p-accent);
+  transform: skewX(-10deg) translate(-2px, -3px) scale(1.04);
+  box-shadow: 6px 6px 0 var(--p-accent);
+}
+
+.p-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.p-theme-switch {
+  font-family: var(--font-hud);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.45rem 0.75rem;
+  background: var(--p-bg-panel);
+  color: var(--p-white);
+  border: 2px solid var(--p-accent);
+  transform: skewX(-8deg);
+  box-shadow: 3px 3px 0 var(--p-black);
+  transition: all 0.15s ease;
+}
+
+.p-theme-switch:hover {
+  background: var(--p-accent);
+  color: var(--p-black);
+}
+
+.p-icon-btn {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--p-black);
+  color: var(--p-white);
+  border: 2px solid var(--p-white);
+  transform: skewX(-8deg);
+  box-shadow: 3px 3px 0 var(--p-accent);
+  transition: all 0.16s ease;
+}
+
+.p-icon-btn:hover {
+  background: var(--p-accent);
+  color: var(--p-white);
+  transform: skewX(-8deg) translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--p-white);
+}
+
+/* ============================================================================
+   BOTONES ESTILO PERSONA (ANGULOS CORTADOS Y ALTO CONTRASTE)
+   ============================================================================ */
+.p-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.7rem 1.35rem;
+  border: 3px solid var(--p-white);
+  transform: skewX(-8deg);
+  transition: all 0.16s cubic-bezier(0.2, 0.85, 0.25, 1);
+  white-space: nowrap;
+}
+
+.p-btn > * {
+  transform: skewX(8deg);
+}
+
+.p-btn-primary {
+  background: var(--p-accent);
+  color: var(--p-white);
+  box-shadow: 6px 6px 0 var(--p-black);
+}
+
+.p-btn-primary:hover {
+  background: var(--p-white);
+  color: var(--p-black);
+  border-color: var(--p-accent);
+  transform: skewX(-8deg) translate(-3px, -3px);
+  box-shadow: 8px 8px 0 var(--p-accent);
+}
+
+.p-btn-white {
+  background: var(--p-white);
+  color: var(--p-black);
+  border-color: var(--p-black);
+  box-shadow: 6px 6px 0 var(--p-accent);
+}
+
+.p-btn-white:hover {
+  background: var(--p-accent);
+  color: var(--p-white);
+  border-color: var(--p-white);
+  transform: skewX(-8deg) translate(-3px, -3px);
+  box-shadow: 8px 8px 0 var(--p-white);
+}
+
+.p-btn-dark {
+  background: var(--p-black);
+  color: var(--p-white);
+  border-color: var(--p-white);
+  box-shadow: 5px 5px 0 var(--p-accent);
+}
+
+.p-btn-dark:hover {
+  background: var(--p-white);
+  color: var(--p-black);
+  transform: skewX(-8deg) translate(-3px, -3px);
+  box-shadow: 7px 7px 0 var(--p-accent);
+}
+
+.p-btn-sm {
+  font-size: 0.92rem;
+  padding: 0.5rem 0.95rem;
+  border-width: 2px;
+}
+
+/* ============================================================================
+   HERO SECTION (PANTALLA DE COMANDO PRINCIPAL)
+   ============================================================================ */
+.p-hero {
+  padding: 4rem 0 4.5rem;
+  position: relative;
+}
+
+.p-hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2.75rem;
+  align-items: center;
+}
+
+.p-date-hud {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.4rem;
+  transform: skewX(-10deg);
+}
+
+.p-date-box {
+  background: var(--p-white);
+  color: var(--p-black);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  padding: 0.25rem 0.8rem;
+  border: 3px solid var(--p-black);
+  box-shadow: 4px 4px 0 var(--p-accent);
+}
+
+.p-status-tag {
+  background: var(--p-accent);
+  color: var(--p-white);
+  font-family: var(--font-hud);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  padding: 0.38rem 0.9rem;
+  border: 2px solid var(--p-white);
+  box-shadow: 4px 4px 0 var(--p-black);
+}
+
+.p-ransom-eyebrow {
+  display: inline-block;
+  background: var(--p-black);
+  color: var(--p-white);
+  border: 2px solid var(--p-white);
+  padding: 0.25rem 0.75rem;
+  font-family: var(--font-hud);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transform: rotate(-1.5deg) skewX(-8deg);
+  margin-bottom: 0.9rem;
+  box-shadow: 4px 4px 0 var(--p-accent);
+}
+
+.p-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 5.2vw, 4.3rem);
+  line-height: 0.98;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  text-shadow: 5px 5px 0 var(--p-black);
+}
+
+.p-title-highlight {
+  display: inline-block;
+  background: var(--p-accent);
+  color: var(--p-white);
+  padding: 0.05rem 0.55rem;
+  border: 3px solid var(--p-white);
+  transform: skewX(-6deg);
+  box-shadow: 6px 6px 0 var(--p-black);
+  margin-top: 0.25rem;
+}
+
+.p-hero-desc {
+  font-size: 1.05rem;
+  color: var(--p-offwhite);
+  background: rgba(17, 17, 22, 0.9);
+  border-left: 6px solid var(--p-accent);
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.8rem;
+  max-width: 630px;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.75);
+}
+
+.p-hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+/* Tarjeta Derecha Estilo Confidant / Protagonist Dossier */
+.p-dossier-card {
+  background: var(--p-bg-panel);
+  border: 4px solid var(--p-white);
+  padding: 1.75rem;
+  position: relative;
+  transform: rotate(1deg);
+  box-shadow: 12px 12px 0 var(--p-accent), 18px 18px 0 var(--p-black);
+}
+
+.p-dossier-stamp {
+  position: absolute;
+  top: -16px;
+  right: 16px;
+  background: var(--p-accent);
+  color: var(--p-white);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.85rem;
+  border: 3px solid var(--p-white);
+  transform: skewX(-10deg);
+  box-shadow: 4px 4px 0 var(--p-black);
+}
+
+.p-dossier-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1.1rem;
+  margin-bottom: 1.2rem;
+  border-bottom: 3px solid var(--p-accent);
+}
+
+.p-emblem-box {
+  width: 64px;
+  height: 64px;
+  background: var(--p-accent);
+  border: 3px solid var(--p-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  color: var(--p-white);
+  transform: skewX(-8deg);
+  box-shadow: 5px 5px 0 var(--p-black);
+  flex-shrink: 0;
+}
+
+.p-dossier-name {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.p-dossier-role {
+  font-family: var(--font-hud);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--p-accent-bright);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.p-coop-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1.1rem;
+}
+
+.p-coop-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  background: var(--p-black);
+  border: 2px solid var(--p-white);
+  transform: skewX(-6deg);
+  box-shadow: 4px 4px 0 var(--p-accent);
+  transition: all 0.16s ease;
+}
+
+.p-coop-item:hover {
+  background: var(--p-accent);
+  color: var(--p-white);
+  transform: skewX(-6deg) translate(-4px, -2px);
+  box-shadow: 7px 7px 0 var(--p-white);
+}
+
+.p-coop-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.p-coop-icon {
+  width: 38px;
+  height: 38px;
+  background: var(--p-white);
+  color: var(--p-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.p-coop-meta span {
+  display: block;
+  font-family: var(--font-hud);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--p-muted);
+  text-transform: uppercase;
+}
+
+.p-coop-item:hover .p-coop-meta span {
+  color: var(--p-white);
+}
+
+.p-coop-meta strong {
+  font-family: var(--font-hud);
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+/* ============================================================================
+   ENCABEZADOS DE SECCION (ESTILO BANNER DE PALACIO / MENU)
+   ============================================================================ */
+.p-section {
+  padding: 4.5rem 0;
+  position: relative;
+}
+
+.p-section-header {
+  margin-bottom: 2.5rem;
+}
+
+.p-banner-strip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--p-accent);
+  color: var(--p-white);
+  border: 2px solid var(--p-white);
+  padding: 0.25rem 0.9rem;
+  font-family: var(--font-hud);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transform: skewX(-10deg);
+  box-shadow: 4px 4px 0 var(--p-black);
+  margin-bottom: 0.75rem;
+}
+
+.p-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4vw, 3.1rem);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-shadow: 4px 4px 0 var(--p-black);
+  margin-bottom: 0.5rem;
+}
+
+.p-section-desc {
+  color: var(--p-offwhite);
+  max-width: 700px;
+  font-size: 0.98rem;
+}
+
+/* ============================================================================
+   FILTROS Y TARJETAS DE PROYECTOS (EXPEDIENTES DE MISION)
+   ============================================================================ */
+.p-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 2.25rem;
+}
+
+.p-filter-tab {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.45rem 1.1rem;
+  background: var(--p-black);
+  color: var(--p-white);
+  border: 2px solid var(--p-white);
+  transform: skewX(-10deg);
+  box-shadow: 4px 4px 0 var(--p-black);
+  transition: all 0.15s ease;
+}
+
+.p-filter-tab:hover {
+  border-color: var(--p-accent);
+  transform: skewX(-10deg) translateY(-2px);
+}
+
+.p-filter-tab.active {
+  background: var(--p-accent);
+  color: var(--p-white);
+  border-color: var(--p-white);
+  box-shadow: 5px 5px 0 var(--p-white);
+}
+
+.p-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 2rem;
+}
+
+.p-project-card {
+  background: var(--p-bg-panel);
+  border: 3px solid var(--p-white);
+  box-shadow: 10px 10px 0 var(--p-black);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.2, 0.85, 0.25, 1);
+}
+
+.p-project-card:hover {
+  transform: translate(-4px, -4px);
+  border-color: var(--p-accent);
+  box-shadow: 12px 12px 0 var(--p-accent);
+}
+
+/* Cabecera estilo Ventana de Navegador Táctica */
+.p-browser-bar {
+  background: var(--p-black);
+  border-bottom: 3px solid var(--p-white);
+  padding: 0.65rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.p-file-code {
+  background: var(--p-accent);
+  color: var(--p-white);
+  font-family: var(--font-hud);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--p-white);
+  transform: skewX(-8deg);
+  flex-shrink: 0;
+}
+
+.p-url-strip {
+  flex: 1;
+  background: #18181f;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.25rem 0.65rem;
+  font-family: var(--font-hud);
+  font-size: 0.78rem;
+  color: var(--p-offwhite);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.p-url-strip:hover {
+  border-color: var(--p-accent);
+  color: var(--p-white);
+}
+
+/* Pantalla Visual del Proyecto */
+.p-project-screen {
+  padding: 1.35rem;
+  background:
+    linear-gradient(135deg, rgba(0, 0, 0, 0.88) 0%, rgba(229, 9, 20, 0.28) 100%);
+  border-bottom: 3px solid var(--p-white);
+  position: relative;
+  overflow: hidden;
+}
+
+[data-persona-theme="p3r"] .p-project-screen {
+  background:
+    linear-gradient(135deg, rgba(4, 9, 20, 0.92) 0%, rgba(0, 210, 255, 0.28) 100%);
+}
+
+.p-screen-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.p-arcana-badge {
+  background: var(--p-white);
+  color: var(--p-black);
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  letter-spacing: 0.08em;
+  padding: 0.15rem 0.65rem;
+  transform: skewX(-10deg);
+  box-shadow: 3px 3px 0 var(--p-accent);
+}
+
+.p-category-label {
+  font-family: var(--font-hud);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--p-white);
+  background: var(--p-black);
+  border: 1px solid var(--p-white);
+  padding: 0.2rem 0.6rem;
+}
+
+.p-screen-title-box {
+  background: var(--p-black);
+  border: 2px solid var(--p-white);
+  padding: 0.85rem 1rem;
+  transform: skewX(-4deg);
+  box-shadow: 5px 5px 0 var(--p-accent);
+}
+
+.p-screen-title {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+
+.p-metrics-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.p-metric-chip {
+  font-family: var(--font-hud);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  background: var(--p-accent);
+  color: var(--p-white);
+  letter-spacing: 0.05em;
+}
+
+/* Cuerpo de la Tarjeta */
+.p-project-body {
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.p-project-desc {
+  color: var(--p-offwhite);
+  font-size: 0.93rem;
+  margin-bottom: 1.1rem;
+}
+
+.p-feature-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 0.9rem;
+  background: var(--p-black);
+  border-left: 4px solid var(--p-accent);
+  margin-bottom: 1.2rem;
+}
+
+.p-feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: 0.84rem;
+  color: var(--p-offwhite);
+}
+
+.p-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+  margin-bottom: 1.25rem;
+}
+
+.p-tech-tag {
+  font-family: var(--font-hud);
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.22rem 0.6rem;
+  background: var(--p-white);
+  color: var(--p-black);
+  transform: skewX(-8deg);
+}
+
+.p-project-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 2px dashed rgba(255, 255, 255, 0.22);
+}
+
+/* ============================================================================
+   SERVICIOS Y PARAMETROS DE HABILIDAD (PERSONA STATS)
+   ============================================================================ */
+.p-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.75rem;
+}
+
+.p-service-card {
+  background: var(--p-bg-panel);
+  border: 3px solid var(--p-white);
+  padding: 1.65rem;
+  box-shadow: 8px 8px 0 var(--p-accent);
+  position: relative;
+}
+
+.p-service-code {
+  display: inline-block;
+  background: var(--p-accent);
+  color: var(--p-white);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  padding: 0.15rem 0.65rem;
+  border: 2px solid var(--p-white);
+  transform: skewX(-10deg);
+  margin-bottom: 0.85rem;
+}
+
+.p-service-title {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.65rem;
+}
+
+.p-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 2.25rem;
+  align-items: start;
+}
+
+.p-panel-box {
+  background: var(--p-bg-panel);
+  border: 3px solid var(--p-white);
+  padding: 1.85rem;
+  box-shadow: 10px 10px 0 var(--p-black);
+}
+
+.p-skill-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 1.1rem;
+}
+
+.p-skill-row {
+  background: var(--p-black);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  padding: 0.65rem 0.9rem;
+  transform: skewX(-6deg);
+}
+
+.p-skill-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-hud);
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.p-skill-rank {
+  color: var(--p-accent-bright);
+}
+
+.p-skill-track {
+  width: 100%;
+  height: 10px;
+  background: #22222a;
+  border: 1px solid var(--p-white);
+  overflow: hidden;
+}
+
+.p-skill-fill {
+  height: 100%;
+  background: var(--p-accent);
+}
+
+/* ============================================================================
+   CONTACTO DIRECTO (CONFIDANTS / CALLING CARD)
+   ============================================================================ */
+.p-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 2.25rem;
+}
+
+.p-confidant-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.p-confidant-card {
+  background: var(--p-bg-panel);
+  border: 3px solid var(--p-white);
+  padding: 1.35rem;
+  box-shadow: 8px 8px 0 var(--p-black);
+  transition: all 0.16s ease;
+}
+
+.p-confidant-card:hover {
+  border-color: var(--p-accent);
+  box-shadow: 10px 10px 0 var(--p-accent);
+}
+
+.p-confidant-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.65rem;
+}
+
+.p-arcana-label {
+  font-family: var(--font-hud);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  background: var(--p-accent);
+  color: var(--p-white);
+  padding: 0.15rem 0.55rem;
+  transform: skewX(-8deg);
+}
+
+.p-calling-card-form {
+  background: var(--p-bg-panel);
+  border: 4px solid var(--p-white);
+  padding: 2rem;
+  box-shadow: 12px 12px 0 var(--p-accent);
+  position: relative;
+}
+
+.p-form-group {
+  margin-bottom: 1.15rem;
+}
+
+.p-form-group label {
+  display: block;
+  font-family: var(--font-hud);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--p-white);
+  margin-bottom: 0.4rem;
+}
+
+.p-input,
+.p-select,
+.p-textarea {
+  width: 100%;
+  padding: 0.75rem 0.95rem;
+  background: var(--p-black);
+  border: 2px solid var(--p-white);
+  color: var(--p-white);
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+}
+
+.p-input:focus,
+.p-select:focus,
+.p-textarea:focus {
+  outline: none;
+  border-color: var(--p-accent);
+  box-shadow: 4px 4px 0 var(--p-accent);
+}
+
+.p-form-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  margin-top: 1.4rem;
+}
+
+/* ============================================================================
+   MODAL DE EXPEDIENTE Y GUIA
+   ============================================================================ */
+.p-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.86);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+.p-modal-box {
+  background: var(--p-bg-panel);
+  border: 4px solid var(--p-white);
+  box-shadow: 14px 14px 0 var(--p-accent);
+  max-width: 740px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem;
+  position: relative;
+}
+
+.p-modal-close {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
+  width: 40px;
+  height: 40px;
+  background: var(--p-accent);
+  color: var(--p-white);
+  border: 2px solid var(--p-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: skewX(-8deg);
+}
+
+/* ============================================================================
+   BOTON FLOTANTE WHATSAPP ESTILO COMANDO PERSONA
+   ============================================================================ */
+.p-floating-wsp {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 95;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--p-accent);
+  color: var(--p-white);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.25rem;
+  border: 3px solid var(--p-white);
+  transform: skewX(-10deg);
+  box-shadow: 6px 6px 0 var(--p-black);
+  transition: all 0.16s ease;
+}
+
+.p-floating-wsp:hover {
+  background: var(--p-white);
+  color: var(--p-black);
+  border-color: var(--p-accent);
+  transform: skewX(-10deg) translate(-3px, -3px) scale(1.04);
+  box-shadow: 8px 8px 0 var(--p-accent);
+}
+
+/* Footer */
+.p-footer {
+  border-top: 4px solid var(--p-accent);
+  background: var(--p-black);
+  padding: 2.25rem 0;
+  margin-top: 3rem;
+}
+
+.p-footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: var(--font-hud);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 940px) {
+  .p-hero-grid,
+  .p-stats-grid,
+  .p-contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .p-nav-links {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .p-projects-grid,
+  .p-project-actions,
+  .p-form-actions {
+    grid-template-columns: 1fr;
+  }
+}
