@@ -51,7 +51,7 @@ export const projects = [
       "Diseño adaptable a dispositivos moviles y escritorio",
       "Transiciones rapidas sin recargas de pagina en React",
     ],
-    technologies: ["React", "JavaScript ES6+", "CSS Avanzado", "Diseño UI/UX", "SupaBase"],
+    technologies: ["React", "JavaScript ES6+", "CSS Avanzado", "Diseño UI/UX", "Bases de Datos"],
     metrics: {
       status: "OPERATIVO",
     },
