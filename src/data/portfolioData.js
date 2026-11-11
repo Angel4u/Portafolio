@@ -40,7 +40,7 @@ export const projects = [
     category: "Aplicacion Web",
     arcanaTag: "CONOCIMIENTO",
     year: "2026",
-    url: "https://angelito-study-jfpnlufaq-educaresponde.vercel.app/", // Reemplaza con el link desplegado de AngelitoStudy
+    url: "https://angelito-study.vercel.app/", // Reemplaza con el link desplegado de AngelitoStudy
     description:
       "Plataforma interactiva de estudio y organizacion academica para estudiantes de ingenieria.",
     challengeAndSolution:
