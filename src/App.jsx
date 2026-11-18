@@ -438,8 +438,7 @@ export default function App() {
             </div>
             <h2 className="section-display-title">CONTÁCTAME AHORA</h2>
             <p className="section-subtitle">
-              Háblame directamente a mi WhatsApp, conecta conmigo en LinkedIn o envíame un correo
-              electrónico con un solo clic.
+              Me puedes hablar por Whatsapp, ubicarme en mi linkedin o mandar un correo electronico.
             </p>
           </div>
 
